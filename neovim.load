@@ -1,0 +1,11 @@
+# vim: set ft=fish :
+
+set plugin_loc  (dirname (status -f))
+set plugin_bin  $plugin_loc/bin
+
+set -gx PATH    $PATH $plugin_bin
+source          $plugin_loc/neovim.fish
+
+if set -q NVIM_LISTEN_ADDRESS
+    __neovim_define_helpers
+end
